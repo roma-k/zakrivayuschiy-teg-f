@@ -1,1 +1,30 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* В этом файле будут храниться все значения переменных 
+в исходном состоянии, а так же их изменения в зависимости 
+от ширины устройства */
+
+:root {
+    /*Шрифты*/
+    --font-family-base: 'Inter';
+    --font-family-heading: 'PressStart2P';
+
+    /* Цвета */
+    --color-primary: #FF6B00;
+    --color-secondary: #F5F5F5;
+    --color-text: #333333;
+    --color-background: #FFFFFF;
+
+    /* Размеры */
+    --font-size-base: 18px;
+    --font-size-large: 49px;
+    --font-size-small: 14px;
+    --font-weight-normal: 410;
+    --font-weight-bold: 715;
+
+    /* Отступы */
+    --spacing-base: 16px;
+    --spacing-large: 24px;
+    --spacing-small: 8px;
+
+    /* Границы */
+    --border-radius: 4px;
+}

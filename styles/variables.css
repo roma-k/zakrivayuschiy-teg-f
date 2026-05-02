@@ -10,9 +10,34 @@
     /* Цвета */
     --color-primary: #FF6B00;
     --color-secondary: #F5F5F5;
-    --color-text: #333333;
+    --color-text: #000000;
     --color-background: #FFFFFF;
 
+    --grid-gradient:
+    /* 1. Горизонтальные повторяющиеся полосы (слева направо) */
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    /* 2. Вертикальные повторяющиеся полосы (сверху вниз) */
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    /* 3. Плавный вертикальный градиент насыщенности */
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0%,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+    
     /* Размеры */
     --font-size-base: 18px;
     --font-size-large: 49px;

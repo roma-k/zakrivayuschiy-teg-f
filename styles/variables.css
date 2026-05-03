@@ -8,13 +8,13 @@
     --font-family-heading: 'PressStart2P';
 
     /* Цвета */
-    --color-primary: #FF6B00;
-    --color-secondary: #F5F5F5;
+    --color-text-stroke: #FFFFFF;
+    --color-secondary: #fff;
     --color-text: #000000;
     --color-background: #FFFFFF;
 
     --grid-gradient:
-    /* 1. Горизонтальные повторяющиеся полосы (слева направо) */
+    /* 1. Горизонтальные */
     repeating-linear-gradient(
       to right,
       #d3d3d3 0,
@@ -22,7 +22,7 @@
       transparent 2px,
       transparent 4px
     ),
-    /* 2. Вертикальные повторяющиеся полосы (сверху вниз) */
+    /* 2. Вертикальные */
     repeating-linear-gradient(
       to bottom,
       #d3d3d3 0,
@@ -30,26 +30,32 @@
       transparent 2px,
       transparent 4px
     ),
-    /* 3. Плавный вертикальный градиент насыщенности */
+    /* 3. Плавный вертикальный градиент*/
     linear-gradient(
       to bottom,
       #e7e7e7 0%,
       #e7e7e7 0.01%,
       #1a1a1a 100%
     );
-    
+
     /* Размеры */
+    --page-width:clamp(375px, 100%, 700px);
+
     --font-size-base: 18px;
-    --font-size-large: 49px;
     --font-size-small: 14px;
+    --font-size-h1-adaptive: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+
     --font-weight-normal: 410;
     --font-weight-bold: 715;
 
     /* Отступы */
-    --spacing-base: 16px;
+    --spacing-base: 25px;
+    --spacing-small: 16px;
+
+
     --spacing-large: 24px;
-    --spacing-small: 8px;
 
     /* Границы */
+    --border: 2px solid var(--color-text);
     --border-radius: 4px;
 }

@@ -3,9 +3,9 @@
 @font-face {
     font-display: swap;
   font-family: 'Inter';
-  src: local('Roboto-Flex-Variable'),
-    url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('woff2 supports variations'),
-  url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('woff2-variations');
+  src: local('Inter-Variable'),
+    url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+  url('../fonts/Inter-Variable.woff2') format('woff2-variations');
   font-weight: 100 900;
   font-style: normal;
 }
@@ -13,8 +13,8 @@
 @font-face {
     font-display: swap;
     font-family: 'PressStart2P';
-    src: local('PressStart2P');
-    url('../fonts/PressStart2P.woff2') format('woff2');
+    src: local('PressStart2P'),
+    url('../fonts/PressStart2P-Regular.woff') format('woff');
     font-style: normal;
     font-weight: 400;
 }

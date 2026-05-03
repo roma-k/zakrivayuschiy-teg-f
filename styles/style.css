@@ -4,20 +4,183 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   margin: 0;
   font-family: var(--font-family-base) sans-serif;
   font-variation-settings: 'wght' var(--font-weight-normal);
   font-size: var(--font-size-base);
+  background-color: var(--color-background);
   background-image: var(--grid-gradient);
   background-attachment: fixed;
   background-size: cover;
 }
+
+.stretch-container {
+  width: var(--page-width);
+}
+
+.header {
+  padding: 100px 0;
+  
+}
+
+.header__content {
+display: flex;
+  height: 327px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: var(--border);
+}
+
+
+
+/* Заголовок страницы*/
+.title {
+  font-family: var(--font-family-heading), monospace;
+  font-size: var(--font-size-h1-adaptive);
+  color: var(--color-text);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+/* Крупный элемент заголовка*/
+.title-accent-size {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  background-color: var(--color-background);
+}
+
+
+/*======================= CARD ==========================*/
+
+.card {
+  border: var(--border);
+}
+
+.card__header {
+  margin: 4px 10px;
+  font-family: var(--font-family-base), monospace;
+  font-size: inherit;
+  color: var(--color-text);
+  font-variation-settings: 'wght' var(--font-weight-bold);
+}
+
+.card__image-wrapper {
+  position: relative;
+}
+
+.card__label {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-family: var(--font-family-heading), monospace;
+  font-size: 14px;
+  mix-blend-mode: hard-light;
+opacity: 0.5;
+-webkit-text-stroke: 1px var(--color-text-stroke, #fff);
+}
+  
+@supports not (-webkit-text-stroke: 1px var(--color-text-stroke, #fff)) {
+  .card__label {
+    text-shadow:
+      -2px -2px 0 var(--color-text-stroke, #fff),
+      2px -2px 0 var(--color-text-stroke, #fff),
+      -2px 2px 0 var(--color-text-stroke, #fff),
+      2px 2px 0 var(--color-text-stroke, #fff);
+  }
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+  padding: var(--spacing-base);
+  font-family: var(--font-family-base), sans-serif;
+  line-height: 1.1667;
+}
+
+.card__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: var(--spacing-small);
+  gap: var(--spacing-base);
+}
+
+.button__text {
+  font-family: var(--font-family-heading), monospace;
+  font-size: var(--font-size-small);
+  line-height: 0.9;
+}
+
+.card__like-button {
+  padding: 12px 37px;
+  background-color: var(--color-secondary);
+  border: var(--border);
+}
+
+.card__icon-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.main-footer__save-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 37px;
+  background-color: var(--color-secondary);
+  border: var(--border);
+}
+
+
+
+/*=============Footer=============*/
+
+.page__footer {
+  padding: 50px 0;
+  background-color: var(--color-background);
+}
+
+
+
+/* Для иконки внутри кнопки «Сохранить на память» используйте 
+тег use и опишите в SVG-файле symbol, а вот иконку сердца 
+придётся вставить в код инлайново. Подробнее об этом в шаге 
+с анимациями. На стадии вёрстки лейаута просто вставьте туда 
+нужную SVG-иконку, чтобы прийти к неанимированному, похожему 
+на макет результату. В Figma эта иконка лежит отдельно от 
+остальных, используйте её на этапе построения лейаута. */
+
+
+
+
+

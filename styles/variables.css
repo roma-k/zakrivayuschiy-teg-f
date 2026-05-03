@@ -52,10 +52,6 @@
     --spacing-base: 25px;
     --spacing-small: 16px;
 
-
-    --spacing-large: 24px;
-
     /* Границы */
     --border: 2px solid var(--color-text);
-    --border-radius: 4px;
 }

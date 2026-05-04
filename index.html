@@ -402,7 +402,7 @@
 
     <footer class="main-footer">
       <button class="main-footer__save-button" onclick="window['modal-id'].showModal()" aria-controls="modal-id">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="floppy-icon">
           <use href="svg/floppy.svg#floppy-icon" />
         </svg>
         <span class="decorated__text">Сохранить на память</span>
@@ -410,7 +410,9 @@
       <dialog class="modal" id="modal-id">
         <div class="modal__wrapper">
           <div class="modal__content">
-            <img src="svg/floppy1.svg" alt="Изображение дискеты">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="floppy-icon modal__floppy-icon">
+          <use href="svg/floppy.svg#floppy-icon" />
+        </svg>
             <span class="modal__text decorated__text">Вставьте дискету, чтобы продолжить</span>
           </div>
           <button class="modal__button-close " onclick="window['modal-id'].close()" aria-controls="modal-id">

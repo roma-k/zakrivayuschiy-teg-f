@@ -135,7 +135,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: var(--spacing-small);
   gap: var(--spacing-base);
 }
 
@@ -394,8 +393,7 @@
 }
 
 .image2 {
-  filter: brightness(900%)
-          contrast(100%);
+  filter: brightness(900%) contrast(100%);
 }
 
 .image3 {
@@ -417,13 +415,3 @@
 .image7 {
   filter: grayscale(100%);
 }
-
-
-/* Шаг 6. Фильтры
-Карточки
-На каждое изображение добавьте дополнительный 
-уникальный класс. Стилизуйте класс CSS-фильтром, 
-который ещё сильнее подчеркнёт ваш замысел и 
-передаст нужную эмоцию. Минимум на семи картинках 
-должны появиться разные фильтры и хотя бы один из 
-них — множественный. */

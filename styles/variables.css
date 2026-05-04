@@ -3,62 +3,56 @@
 от ширины устройства */
 
 :root {
-    /*Шрифты*/
-    --font-family-base: 'Inter';
-    --font-family-heading: 'PressStart2P';
+  /*Шрифты*/
+  --font-family-base: 'Inter';
+  --font-family-heading: 'PressStart2P';
 
-    /* Цвета */
-    --color-text-stroke: #FFFFFF;
-    --color-secondary: #fff;
-    --text-blend-color: #fff;
-    --color-text: #000000;
-    --color-accent: #000000;
-    --color-background: #FFFFFF;
-    --color-backdrop: rgba(0, 0, 0, 0.7);
-    --color-heart-contour: #000000;
-    --color-heart-body: #000000;
-    --animation-fill-color: #FF0000;
-    --core-heart-core: #000;
+  /* Цвета */
+  --color-text-stroke: #FFFFFF;
+  --color-secondary: #fff;
+  --text-blend-color: #fff;
+  --color-text: #000000;
+  --color-accent: #000000;
+  --color-background: #FFFFFF;
+  --color-backdrop: rgba(0, 0, 0, 0.7);
+  --color-heart-contour: #000000;
+  --color-heart-body: #000000;
+  --animation-fill-color: #FF0000;
+  --core-heart-core: #000;
 
-    --grid-gradient:
+  --grid-gradient:
     /* 1. Горизонтальные */
-    repeating-linear-gradient(
-      to right,
+    repeating-linear-gradient(to right,
       #d3d3d3 0,
       #d3d3d3 2px,
       transparent 2px,
-      transparent 4px
-    ),
+      transparent 4px),
     /* 2. Вертикальные */
-    repeating-linear-gradient(
-      to bottom,
+    repeating-linear-gradient(to bottom,
       #d3d3d3 0,
       #d3d3d3 2px,
       transparent 2px,
-      transparent 4px
-    ),
+      transparent 4px),
     /* 3. Плавный вертикальный градиент*/
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #e7e7e7 0%,
       #e7e7e7 0.01%,
-      #1a1a1a 100%
-    );
+      #1a1a1a 100%);
 
-    /* Размеры */
-    --page-width:clamp(375px, 100%, 700px);
+  /* Размеры */
+  --page-width: clamp(375px, 100%, 700px);
 
-    --font-size-base: 18px;
-    --font-size-small: 14px;
-    --font-size-h1-adaptive: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --font-size-base: 18px;
+  --font-size-small: 14px;
+  --font-size-h1-adaptive: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 
-    --font-weight-normal: 410;
-    --font-weight-bold: 715;
+  --font-weight-normal: 410;
+  --font-weight-bold: 715;
 
-    /* Отступы */
-    --spacing-base: 25px;
-    --spacing-small: 16px;
+  /* Отступы */
+  --spacing-base: 25px;
+  --spacing-small: 16px;
 
-    /* Границы */
-    --border: 2px solid var(--color-text);
+  /* Границы */
+  --border: 2px solid var(--color-text);
 }

@@ -10,8 +10,15 @@
     /* Цвета */
     --color-text-stroke: #FFFFFF;
     --color-secondary: #fff;
+    --text-blend-color: #fff;
     --color-text: #000000;
+    --color-accent: #000000;
     --color-background: #FFFFFF;
+    --color-backdrop: rgba(0, 0, 0, 0.7);
+    --color-heart-contour: #000000;
+    --color-heart-body: #000000;
+    --animation-fill-color: #FF0000;
+    --core-heart-core: #000;
 
     --grid-gradient:
     /* 1. Горизонтальные */

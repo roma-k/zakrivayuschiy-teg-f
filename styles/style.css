@@ -9,6 +9,8 @@
 
 */
 
+
+
 .page {
   display: flex;
   flex-direction: column;
@@ -64,6 +66,7 @@ display: flex;
 
 
 .main {
+  padding-bottom: 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,32 +136,136 @@ opacity: 0.5;
   gap: var(--spacing-base);
 }
 
-.button__text {
+.decorated__text {
   font-family: var(--font-family-heading), monospace;
   font-size: var(--font-size-small);
   line-height: 0.9;
+  mix-blend-mode: difference;
+    z-index: 10;
+    position: relative;
+    color: var(--text-blend-color);
 }
 
 .card__like-button {
-  padding: 12px 37px;
+  position: relative;
+  min-width: 122px;
+  padding: 9px 17px;
   background-color: var(--color-secondary);
   border: var(--border);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card__like-button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+  background-color: var(--color-accent);
 }
 
 .card__icon-button {
   padding: 0;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
+
+
 .main-footer__save-button {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding: 12px 37px;
+  padding: 15px 20px;
   background-color: var(--color-secondary);
   border: var(--border);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.main-footer__save-button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+  background-color: var(--color-accent);
+}
+
+.main-footer__save-button svg {
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+
+
+
+/*======================= MODAL ==========================*/
+
+.modal {
+  padding: 0;
+  width: clamp(341px, 90%, 353px);
+}
+
+.modal::backdrop {
+  background-color: var(--color-backdrop, rgba(0, 0, 0, 0.7));
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+
+@media (width <= 375px) {
+  .modal__wrapper {
+    padding: 30px 40px;
+  }
+  .main-footer__save-button {
+    flex-direction: column;
+  }
+}
+
+
+.modal__content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal__text {
+  line-height: 1.5;
+}
+
+.modal__button-close {
+  position: relative;
+  border: var(--border);
+  background-color: var(--color-background);
+  padding: 9px 17px;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.modal__button-close::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+  background-color: var(--color-accent);
 }
 
 
@@ -172,13 +279,116 @@ opacity: 0.5;
 
 
 
-/* Для иконки внутри кнопки «Сохранить на память» используйте 
-тег use и опишите в SVG-файле symbol, а вот иконку сердца 
-придётся вставить в код инлайново. Подробнее об этом в шаге 
-с анимациями. На стадии вёрстки лейаута просто вставьте туда 
-нужную SVG-иконку, чтобы прийти к неанимированному, похожему 
-на макет результату. В Figma эта иконка лежит отдельно от 
-остальных, используйте её на этапе построения лейаута. */
+/*=============Hover=============*/
+
+.card__like-button:hover::after,
+.main-footer__save-button:hover::after,
+.modal__button-close:hover::after {
+  left: 0;
+}
+
+.card__like-button:focus,
+.main-footer__save-button:focus,
+.modal__button-close:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent);
+}
+
+
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible{
+  border: 2px solid var(--color-accent);
+}
+
+
+/*=============Heart=============*/
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--core-heart-core);
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-heart-body);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+
+/*active*/
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+
+/*clicked*/
+
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+  animation: like-heart-animation 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+  animation: like-heart-animation 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+  animation: like-heart-animation 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s ease-in 0.3s;
+}
+
+
+/* Шаг 6. Фильтры
+Карточки
+На каждое изображение добавьте дополнительный 
+уникальный класс. Стилизуйте класс CSS-фильтром, 
+который ещё сильнее подчеркнёт ваш замысел и 
+передаст нужную эмоцию. Минимум на семи картинках 
+должны появиться разные фильтры и хотя бы один из 
+них — множественный. */
 
 
 
